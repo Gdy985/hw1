@@ -118,7 +118,7 @@ CREATE TABLE studios (
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
-    year_released INTEGER,
+    year_released TEXT,
     MPAA_rating TEXT,
     studio_id INTEGER
 );
@@ -152,7 +152,7 @@ INSERT INTO movies (
     "studio_id"
 ) VALUES (
     "Batman Begins",
-    2005,
+    "2005",
     "PG-13",
     1
 );
@@ -164,7 +164,7 @@ INSERT INTO movies (
     "studio_id"
 ) VALUES (
     "The Dark Knight",
-    2008,
+    "2008",
     "PG-13",
     1
 );
@@ -176,7 +176,7 @@ INSERT INTO movies (
     "studio_id"
 ) VALUES (
     "The Dark Knight Rises",
-    2012,
+    "2012",
     "PG-13",
     1
 );
@@ -399,7 +399,7 @@ INSERT INTO casts (
 
 SELECT movies.title, movies.year_released, movies.MPAA_rating, studios.title
 FROM movies INNER JOIN studios ON studios.id = movies.studio_id
-ORDER BY movies.year_released;
+ORDER BY movies.id;
 
 -- Prints a header for the cast output
 .print ""
